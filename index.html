@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Myjigsaw : Jigso puzzle where you can use your custom picture." />
+    <meta name="description" content="MyJigsaw : Make your own Jigsaw puzzle with any picture!" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Myjigsaw</title>
+    <title>MyJigsaw</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/yeegahng/MyJigsaw">View on GitHub</a>
 
-          <h1 id="project_title">Myjigsaw</h1>
-          <h2 id="project_tagline">Jigso puzzle where you can use your custom picture.</h2>
+          <h1 id="project_title">MyJigsaw</h1>
+          <h2 id="project_tagline">Make your own Jigsaw puzzle with any picture!</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/yeegahng/MyJigsaw/zipball/master">Download this project as a .zip file</a>
@@ -35,11 +35,9 @@
 <a name="welcome-to-myjigsaw-pages" class="anchor" href="#welcome-to-myjigsaw-pages"><span class="octicon octicon-link"></span></a>Welcome to MyJigsaw Pages.</h3>
 
 <p>This page is to show the roadmap of the Android app project 'MyJigsaw', providing a list of to-do in software implementation.
-You can check out the new branch:</p>
+You can clone the repository as follows:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>$ git clone https://github.com/yeegahng/MyJigsaw.git
 </code></pre>
 
 <h3>
@@ -52,13 +50,35 @@ Speaking about the motivation, this is it.</p>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
 <p>If you're interested in improving this project in any way, please do not hesitate to contact me (<a href="https://github.com/yeegahng" class="user-mention">@yeegahng</a>).</p>
+
+<h3>
+<a name="plan" class="anchor" href="#plan"><span class="octicon octicon-link"></span></a>Plan</h3>
+
+<h5>
+<a name="phase-1-tile-rotation" class="anchor" href="#phase-1-tile-rotation"><span class="octicon octicon-link"></span></a>Phase 1. Tile rotation</h5>
+
+<ol>
+<li>Picture loading
+a. from built-in asset
+b. from user-selected local resource
+c. from user-selected remote resource (web URI)</li>
+<li>Saving loaded picture</li>
+<li>Segmentation
+a. break picture into 9 tiles
+b. break picture into N tiles</li>
+<li>Mess up
+a. all
+b. by step level
+b. at random</li>
+<li>Step levels: 1 -&gt; 2 -&gt; ... -&gt; N (random)</li>
+</ol>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Myjigsaw maintained by <a href="https://github.com/yeegahng">yeegahng</a></p>
+        <p class="copyright">MyJigsaw maintained by <a href="https://github.com/yeegahng">yeegahng</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
