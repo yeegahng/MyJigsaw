@@ -3,4 +3,6 @@ MyJigsaw
 
 Make your own Jigsaw puzzle with any picture!
 
-Vist http://yeegahng.github.io/MyJigsaw/ for further reading.
+This is open project, and any one can comment, advise, fix bug, and make it richer.
+
+Visit http://yeegahng.github.io/MyJigsaw/ for further reading.
