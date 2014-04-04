@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999966"
+    tools:context="com.y4games.SpinTileActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="SpinTile"
+        android:textColor="#cccc99"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+    <FrameLayout
+        android:id="@+id/tile_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true" >
+
+        <GridLayout
+            android:id="@+id/tile_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+        
+    <LinearLayout
+        android:id="@+id/configuration_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+            android:text="Load from Gallery"
+            android:onClick="onClickLoadFromGallery" />
+        
+        <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+            android:text="Load from Camera"
+            android:onClick="onClickLoadFromCamera" />
+
+		<EditText
+		    android:id="@+id/tile_dimen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:digits="true"
+            android:hint="Enter tile dimension" />
+        
+	    <Button
+	        android:layout_width="150dp"
+	        android:layout_height="100dp"
+	        android:layout_gravity="center"
+	        android:onClick="onClickloadImage"
+	        android:text="Click\nto load image" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:onClick="onClickStartGame"
+        android:text="Start" />
+
+</FrameLayout>
