@@ -55,24 +55,26 @@
         <Button
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-            android:text="Load from Camera"
+            android:text="Take picture with Camera"
             android:onClick="onClickLoadFromCamera" />
 
-		<EditText
-		    android:id="@+id/tile_dimen"
+		<LinearLayout
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:digits="true"
-            android:hint="Enter tile dimension" />
-        
-	    <Button
-	        android:layout_width="150dp"
-	        android:layout_height="100dp"
-	        android:layout_gravity="center"
-	        android:onClick="onClickloadImage"
-	        android:text="Click\nto load image" />
-
+	        android:orientation="horizontal" >
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Tile Dimension" />
+	        <EditText
+			    android:id="@+id/tile_dimen"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:digits="true"
+	            android:hint="Enter tile dimension" />
+        </LinearLayout>
     </LinearLayout>
+
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"

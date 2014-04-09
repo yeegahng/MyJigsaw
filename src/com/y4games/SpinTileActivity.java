@@ -34,46 +34,6 @@ public class SpinTileActivity extends Activity {
 		super.onCreate(savedInstanceState);
 	}
 
-	private void messTiles() {
-
-	}
-
-	private void segmentToTiles(ImageView image) {
-
-	}
-
-	private void confirmImageEligibility(ImageView image) {
-
-	}
-
-	// Method for test
-	private void setSampleImage() {
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-				R.raw.sample_image);
-		mWholeImage.setImageBitmap(bitmap);
-	}
-
-	public void onClickLoadImageFromGallery(View v) {
-		// Open Gallery
-		Intent intent = new Intent(Intent.ACTION_PICK);
-		intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
-		startActivityForResult(intent, LOAD_FROM_GALLERY);
-	}
-
-	public void onClickLoadImageFromCamera(View v) {
-		// Run camera
-		Intent intent = new Intent();
-
-		// Designate temporary path to store camera shot
-		File file = new File(Environment.getExternalStorageDirectory(),
-				"/MyJigsaw/" + "camera_shot");
-		String tempPictuePath = file.getAbsolutePath();
-		intent.putExtra(MediaStore.EXTRA_OUTPUT, tempPictuePath);
-		intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE); // 모든 단말에서 안될 수 있기
-															// 때문에 수정해야 함
-		startActivityForResult(intent, LOAD_FROM_CAMERA);
-	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		SetImage setImage = new SetImage();
@@ -113,6 +73,35 @@ public class SpinTileActivity extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	@Override
+	protected void onDestroy() {
+		// ask if current status needs to be saved.
+
+		super.onDestroy();
+	}
+
+	public void onClickLoadImageFromGallery(View v) {
+		// Open Gallery
+		Intent intent = new Intent(Intent.ACTION_PICK);
+		intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+		startActivityForResult(intent, LOAD_FROM_GALLERY);
+	}
+
+	public void onClickLoadImageFromCamera(View v) {
+		// Run camera
+		Intent intent = new Intent();
+
+		// Designate temporary path to store camera shot
+		File file = new File(Environment.getExternalStorageDirectory(),
+				"/MyJigsaw/" + "camera_shot");
+		String tempPictuePath = file.getAbsolutePath();
+		intent.putExtra(MediaStore.EXTRA_OUTPUT, tempPictuePath);
+		intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE); // 모든 단말에서 안될 수 있기
+															// 때문에 수정해야 함
+		startActivityForResult(intent, LOAD_FROM_CAMERA);
+	}
+
+
 	public void onClickStartGame(View v) {
 		// check: image loading
 		if (mWholeImage == null) {
@@ -139,11 +128,22 @@ public class SpinTileActivity extends Activity {
 		// TODO draw playboard in layout
 	}
 
-	@Override
-	protected void onDestroy() {
-		// ask if current status needs to be saved.
+	// Method for test
+	private void setSampleImage() {
+		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.raw.sample_image_rect);
+		mWholeImage.setImageBitmap(bitmap);
+	}
+	
+	private void messTiles() {
 
-		super.onDestroy();
+	}
+
+	private void segmentToTiles(ImageView image) {
+
+	}
+
+	private void confirmImageEligibility(ImageView image) {
+
 	}
 
 	private class Tile extends ImageView implements android.view.View.OnClickListener {
